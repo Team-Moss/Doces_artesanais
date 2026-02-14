@@ -1,0 +1,113 @@
+@import "tailwindcss";
+
+.main-content {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem 1rem;
+}
+
+@media (min-width: 640px) {
+  .main-content {
+    padding: 3rem -21rem 1rem;
+  }
+}
+
+.promo-section {
+  min-height: 40vh;
+}
+
+.promo-card {
+  background: linear-gradient(to right, #06b6d4, #14b8a6, #10b981);
+  border-radius: 1.5rem;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 20px 25px rgba(0, 0, 0, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+@media (min-width: 640px) {
+  .promo-section {
+    min-height: 50vh;
+  }
+  .promo-card {
+    padding: 1rem;
+  }
+}
+
+.promo-circle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+}
+
+.promo-circle-1 {
+  width: 8rem;
+  height: 8rem;
+  top: 0;
+  right: 0;
+  transform: translate(50%, -50%);
+}
+
+.promo-circle-2 {
+  width: 6rem;
+  height: 6rem;
+  bottom: 0;
+  left: 0;
+  transform: translate(-50%, 50%);
+}
+
+.promo-content {
+  position: relative;
+  z-index: 10;
+}
+
+.promo-icon-wrapper {
+  background: rgba(255, 255, 255, 0.2);
+  padding: 1rem;
+  border-radius: 1rem;
+  backdrop-filter: blur(10px);
+  display: inline-block;
+  margin-bottom: 1rem;
+}
+
+.promo-icon {
+  width: 2.5rem;
+  height: 2.5rem;
+  stroke: white;
+}
+
+.promo-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: white;
+  margin-bottom: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .promo-title {
+    font-size: 1.875rem;
+  }
+}
+
+@media (min-width: 1024px) {
+  .promo-title {
+    font-size: 2.25rem;
+  }
+}
+
+.promo-text {
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .promo-text {
+    font-size: 1.125rem;
+  }
+}
+
+.promo-text-small {
+  font-size: 0.875rem;
+}

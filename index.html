@@ -1,45 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trufas Artesanais - Loja Online</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Toastify -->
+  <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css">
+  <!-- icones -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha512-Fo3rlrZj/k7ujTnHg4CGR2D7kSs0v4LLanw2qksYuRlEzO+tcaEPQogQ0KaoGN26/zrn20ImR1DfuLWnOo7aBA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!--Meta tag OG -->
+  <meta property="og:type" content="website"/>
+  <meta property="og:title" content="Hamburguer dev - o melhor burger dev!"/>
+  <meta property="og:image" content="https://davi-devroom.github.io/projeto-hamburgueria/assets/hamb-1.png"/>
+  <meta property="og:description" content="O melhor hamburguer dev!"/>
+  <meta property="og:site_name" content="Burguer Dev!"/>
+  <!-- css -->
+  <link rel="stylesheet" href="src/output.css">
+  <title>Doces artesanais</title>
 </head>
 <body>
-    <!-- Header -->
-    <header class="header">
-        <div class="header-container">
-            <div class="header-logo">
-                <div class="logo-icon">🍫</div>
-                <div>
-                    <h1 class="logo-title">Trufas Artesanais</h1>
-                    <p class="logo-subtitle">Sabor que derrete na boca</p>
-                </div>
-            </div>
+   <!-- HEADER-->
+    <header class="w-full h-[420px] bg-zinc-900 bg-home bg-cover bg-center ">
+        <div class="w-full h-full flex flex-col justify-center items-center">
+            <img src="assets/fotos/log.jpg" alt="Logo" class="w-32 h-32 rounded-full shadow-lg hover:scale-110 duration-200">
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-bold text-white mb-3">Trufas Artesanais</h1>
+            <span class="text-base sm:text-lg text-cyan-400 max-w-2xl mx-auto text-center">Feitas com ingredientes selecionados e muito carinho. <br> Saboreie a perfeição!</span>
             
-            <button class="header-btn" onclick="openModal()">
-                <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <circle cx="9" cy="21" r="1"></circle>
-                    <circle cx="20" cy="21" r="1"></circle>
-                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path>
-                </svg>
-                <span class="header-btn-text-full">Faça seu pedido agora</span>
-                <span class="header-btn-text-short">Pedido</span>
-                <span class="cart-badge" id="cartBadge" style="display: none;">0</span>
-            </button>
         </div>
     </header>
-
-    <!-- Main Content -->
+    <!-- FIM HEADER-->
+     <!-- title -->
     <main class="main-content">
-        <div class="hero-section">
-            <h2 class="hero-title">Trufas Artesanais</h2>
-            <p class="hero-subtitle">Feitas com ingredientes selecionados e muito carinho. Saboreie a perfeição!</p>
-        </div>
-
-        <!-- Promo Section -->
-        <section class="promo-section">
+      <section class="promo-section">
             <div class="promo-card">
                 <div class="promo-circle promo-circle-1"></div>
                 <div class="promo-circle promo-circle-2"></div>
@@ -63,92 +54,106 @@
                         <span class="promo-text-small">Economize e experimente nossos sabores artesanais</span>
                     </p>
                     
-                    <button class="promo-btn" onclick="openModal()">
-                        <span>Quero o Kit Especial</span>
-                        <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                            <polyline points="20 12 20 22 4 22 4 12"></polyline>
-                            <rect x="2" y="7" width="20" height="5"></rect>
-                            <line x1="12" y1="22" x2="12" y2="7"></line>
-                            <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
-                            <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
-                        </svg>
-                    </button>
                 </div>
             </div>
         </section>
-
-        <!-- Products Grid -->
-        <div class="products-grid" id="productsGrid"></div>
     </main>
 
-    <!-- Floating Cart -->
-    <div class="floating-cart" id="floatingCart" style="display: none;">
-        <div class="cart-content">
-            <div class="cart-header">
-                <div>
-                    <p class="cart-items-text" id="cartItemsText">0 trufas no carrinho</p>
-                    <p class="cart-savings" id="cartSavings" style="display: none;">Economia: R$ 0,00</p>
-                </div>
-                <div class="cart-total-wrapper">
-                    <p class="cart-total" id="cartTotal">R$ 0,00</p>
-                </div>
-            </div>
+    <div class="menu" id="menu">
+      <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-7 md:gap-10 mx-auto max-w-7xl px-2 mb-16 ">
+          <!--Produto-->
+          <div class="flex gap-2">
+              <img src="assets/fotos/Trufa-de-Maracujá.jpg" alt="Trufa de maracuja" class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+              <div>
+                  <p class="font-bold">
+                    Trufa de Maracujá
+                  </p>
+                  <p class="text-sm">
+                      Chocolate meio amargo, recheio de ganache de chocolate branco com redução de maracujá.
+                  </p>
+                  <div class="flex items-center gap-2 justify-between mt-3">
+                      <p class="font-bold text-lg">R$ 3,50</p>
+                      <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Trufa de maracuja" data-price="3.50">
+                          <i class="fa fa-cart-plus text-lg text-white"></i>
+                      </button>
+                  </div>
+              </div>
+          </div>
+          <!--FIM Produto-->
+          <!--Produto-->
+          <div class="flex gap-2">
+              <img src="assets/fotos/Trufa-de-chocolate.jpg" alt="Trufa de chocolate" class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+              <div>
+                  <p class="font-bold">
+                    Trufa de chocolate
+                  </p>
+                  <p class="text-sm">
+                    Chocolate meio amargo, recheio de ganache de chocolate nobre ao leite.
+                  </p>
+                  <div class="flex items-center gap-2 justify-between mt-3">
+                      <p class="font-bold text-lg">R$ 3,50</p>
+                      <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Trufa de chocolate" data-price="3.50">
+                          <i class="fa fa-cart-plus text-lg text-white"></i>
+                      </button>
+                  </div>
+              </div>
+          </div>
+          <!--FIM Produto-->
+          <!--Produto-->
+          <div class="flex gap-2">
+              <img src="assets/fotos/Trufa-Morango.jpg" alt="Trufa de Morango" class="w-28 h-28 rounded-md hover:scale-110 hover:-rotate-2 duration-300">
+              <div>
+                  <p class="font-bold">
+                      Trufa de Morango
+                  </p>
+                  <p class="text-sm">
+                      Chocolate meio amargo, recheio de morango.
+                  </p>
+                  <div class="flex items-center gap-2 justify-between mt-3">
+                      <p class="font-bold text-lg">R$ 3,50</p>
+                      <button class="bg-gray-900 px-5 rounded add-to-cart-btn" data-name="Trufa de morango" data-price="3.50">
+                          <i class="fa fa-cart-plus text-lg text-white"></i>
+                      </button>
+                  </div>
+              </div>
+          </div>
+          <!--FIM Produto-->
+      </main>
+  </div>
+  <!--FIM menu-->
+  <!-- Modal Cart-->
+    <div class="bg-black/60 w-full h-full fixed top-0 left-0 z-[99] items-center justify-center hidden"
+    id="cart-modal">
+      <div class="bg-white p-5 rounded-md min-w-[90%] md:min-w-[600px]">
+          <h2 class="text-center font-bold text-2xl mb-2">Meu carrinho</h2>
 
-            <div class="promo-notification" id="promoNotification" style="display: none;">
-                <div class="promo-notification-content">
-                    <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                        <polyline points="20 12 20 22 4 22 4 12"></polyline>
-                        <rect x="2" y="7" width="20" height="5"></rect>
-                        <line x1="12" y1="22" x2="12" y2="7"></line>
-                        <path d="M12 7H7.5a2.5 2.5 0 0 1 0-5C11 2 12 7 12 7z"></path>
-                        <path d="M12 7h4.5a2.5 2.5 0 0 0 0-5C13 2 12 7 12 7z"></path>
-                    </svg>
-                    <p class="promo-notification-text">
-                        Parabéns! Você ganhou o desconto do combo!
-                    </p>
-                </div>
-                <p class="promo-notification-subtext">3 trufas por apenas R$ 10,00</p>
-            </div>
+          <div id="cart-items" class="flex justify-between mb-2 flex-col">
 
-            <div class="cart-tip">
-                <p>💡 Dica: A cada 3 trufas = R$ 10,00</p>
-            </div>
-        </div>
+          </div>
+          <p class="font-bold">total: <span id="cart-total" >0.00</span></p>
+          <p class="font-bold mt-4">Endereço de entrega:</p>
+          <input type="text" placeholder="Digite seu endereço completo" id="address"
+          class="w-full border-2 p-1 rounded my-1">
+          <p class="text-red-500 hidden" id="address-warn">Digite seu endereço completo!</p>
+
+          <div class="flex items-center justify-between mt-5 w-full">
+              <button id="close-modal-btn">Fechar</button>
+              <button id="checkout-btn" class="bg-green-500 text-white px-4 py-1 rounded">Finalizar pedido</button>
+          </div>
+      </div>
+
     </div>
+  <!-- FIMModal Cart-->
 
-    <!-- Order Modal -->
-    <div class="modal-overlay" id="modalOverlay" style="display: none;" onclick="closeModal()"></div>
-    <div class="modal" id="orderModal" style="display: none;">
-        <div class="modal-header">
-            <h2>Seu Pedido</h2>
-            <button class="modal-close" onclick="closeModal()">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <line x1="18" y1="6" x2="6" y2="18"></line>
-                    <line x1="6" y1="6" x2="18" y2="18"></line>
-                </svg>
-            </button>
-        </div>
-
-        <div class="modal-body" id="modalBody">
-            <div class="empty-cart">
-                <p>Seu carrinho está vazio</p>
-            </div>
-        </div>
-
-        <div class="modal-footer" id="modalFooter" style="display: none;">
-            <button class="confirm-btn" onclick="confirmOrder()">
-                <svg class="icon-small" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                    <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
-                    <polyline points="22 4 12 14.01 9 11.01"></polyline>
-                </svg>
-                <span>Confirmar Pedido</span>
-            </button>
-        </div>
-    </div>
-
-    <!-- Toast Container -->
-    <div class="toast-container" id="toastContainer"></div>
-
-    <script src="script.js"></script>
+  <!-- Button cart footer-->
+    <footer class="w-full bg-gradient-to-r from-cyan-500 via-teal-500 to-emerald-500 py-2 fixed bottom-0 z-40 flex items-center justify-center">
+      <button class="flex items-center gap-2 text-white font-bold" id="cart-btn">
+          (<span id="cart-count">0</span>)
+          Ver meu carrinho
+          <i class="fa fa-cart-plus text-lg text-white"></i>
+      </button>
+    </footer>
+  <!-- FIM Button cart footer-->
+  <script src="src/js/script.js"></script>
 </body>
 </html>
