@@ -347,7 +347,7 @@ function confirmOrder() {
   const message = encodeURIComponent(
     `Usuário: ${userName}\nProdutos:\n${cartItems}\nTotal: R$${total.toFixed(2)}`,
   );
-  const phone = "67993191904";
+  const phone = "67981547862";
   window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
 
   showToast(
