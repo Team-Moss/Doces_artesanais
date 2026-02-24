@@ -311,7 +311,7 @@ function renderModalItems() {
   html += `<div class="summary-row total"><span>Total</span><span>R$ ${total.toFixed(2)}</span></div>`;
   // Input de nome do usuário logo abaixo do total
   html += `<div id="userNameInputWrapper" style="margin-top: 16px;">
-    <label for="userNameInput" style="font-weight: bold;">Seu nome:</label>
+    <label for="userNameInput" style="font-weight: bold;">Seu nome e o numero do armário:</label>
     <input type="text" id="userNameInput" placeholder="Digite seu nome" style="width: 100%; padding: 16px; margin-top: 4px; border-radius: 4px; border: 1px solid #ccc; font-size: 1rem;" />
   </div>`;
   html += "</div>";
@@ -345,7 +345,7 @@ function confirmOrder() {
 
   // Monta mensagem final
   const message = encodeURIComponent(
-    `Usuário: ${userName}\nProdutos:\n${cartItems}\nTotal: R$${total.toFixed(2)}`,
+    `Nome e armário: ${userName}\nProdutos:\n${cartItems}\nTotal: R$${total.toFixed(2)}`,
   );
   const phone = "67993191904";
   window.open(`https://wa.me/${phone}?text=${message}`, "_blank");
